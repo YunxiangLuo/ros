@@ -585,6 +585,10 @@ cd ~/catkin_ws
 # 2、输入指令catkin_make进行编译
 catkin_make
 
+# 当rosdep连接不上时,需根据反馈缺少的包,手动逐个安装ros-kinetic-xx-xxx
+
+sudo apt-get install ros-kinetic-yocs-cmd-vel-mux
+
 # 3、刷新环境变量
 source ~/catkin_ws/devel/setup.bash
 
