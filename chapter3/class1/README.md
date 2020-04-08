@@ -614,7 +614,7 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 sudo apt-get install git
 mkdir -p catkin_ws/src
 cd catkin_ws/src
-git clone --branch fix_cartographer https://github.com/DroidAITech/ROS-Academy-for-Beginners.git
+git clone https://github.com/YunxiangLuo/roscode.git
 cd ..
 sudo rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
 catkin_make
