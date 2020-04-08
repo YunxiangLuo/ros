@@ -341,15 +341,20 @@ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 
 sudo wget https://isrc.iscas.ac.cn/mirror/help/mirror/xlab_ubuntu16.04.list -O /etc/apt/sources.list.d/xlab_ubuntu16.04.list
 
-wget -qO - https://isrc.iscas.ac.cn/mirror/ros/ros.gpg | sudo apt-key add -
-
 sudo sh -c 'echo "deb http://isrc.iscas.ac.cn/mirror/ros/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+# wget -qO - https://isrc.iscas.ac.cn/mirror/ros/ros.gpg | sudo apt-key add -
+
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 sudo apt-get update
 
 sudo apt-get install ros-kinetic-desktop-full -y
 sudo apt install ros-kinetic-ros-controllers
 
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+sudo apt install python-rosdep
 sudo rosdep init
 rosdep update
 
@@ -600,6 +605,7 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 以上教学包安装命令可总结为
 
 ```bash
+sudo apt-get install git
 mkdir -p catkin_ws/src
 cd catkin_ws/src
 git clone --branch fix_cartographer https://github.com/DroidAITech/ROS-Academy-for-Beginners.git
