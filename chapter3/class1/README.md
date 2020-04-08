@@ -281,7 +281,9 @@ sudo wget https://isrc.iscas.ac.cn/mirror/help/mirror/xlab_ubuntu16.04.list -O /
 - 首先添加 ROS 源公钥
 
 ```bash
-wget -qO - https://isrc.iscas.ac.cn/mirror/ros/ros.gpg | sudo apt-key add -
+# wget -qO - https://isrc.iscas.ac.cn/mirror/ros/ros.gpg | sudo apt-key add -
+
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 ```
 - 添加软件源列表
 
