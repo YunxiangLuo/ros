@@ -4,7 +4,9 @@
 
 [第三章 第一讲  ROS简介及安装](https://github.com/YunxiangLuo/ros/tree/master/chapter3/class1)
 
-> 
+> 1.1  [什么是ROS？]()
+> 1.2  [ROS的安装与配置]()
+> 1.3  [教学软件包的安装与使用]()
 
 ```
 
