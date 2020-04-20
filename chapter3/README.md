@@ -9,7 +9,7 @@
 > 1.3  [教学软件包的安装与使用]()
 
 ```
-
+了解什么是ROS，ROS的特点和它的优势；掌握ROS的安装和配置方法；掌握教学软件包的安装，通过验证教学软件包的安装，初步了解ROS相关基础知识
 ```
 
 [第三章 第二讲 常用开发和代码管理工具](https://github.com/YunxiangLuo/ros/tree/master/chapter3/class2)
