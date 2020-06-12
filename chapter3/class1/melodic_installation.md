@@ -8,7 +8,7 @@
 - Internet网络连接
 - 安装盘制作工具 [Rufus下载](https://rufus.ie/)
 Rufus是一个Linux USB安装盘制作工具，可用于格式化和创建可启动的USB flash drives
-- Ubuntu Desktop 18.04.4 LTS 安装镜像 [下载](https://isrc.iscas.ac.cn/mirror/ubuntu-release/)
+- Ubuntu Desktop 18.04.4 LTS 安装镜像 [下载](https://isrc.iscas.ac.cn/mirror/ubuntu-release/bionic/ubuntu-18.04-desktop-amd64.iso)
 
 ***有些比较新的电脑可能会出现驱动问题（比如：没有WIFI功能）。此时，我们需要安装Ubuntu 18.04。 Ubuntu 18.04对应 ROS 版本 Melodic***
 
