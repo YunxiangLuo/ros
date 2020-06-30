@@ -192,7 +192,7 @@ cd catkin_ws/src                #进入catkin_ws下的src目录
 ```bash
 sudo apt install git        #安装git
 cd catkin_ws/src            #进入catkin_ws下的src目录
-git clone https://github.com/DroidAITech/ROS-Academy-for-Beginners.git	#下载教学包
+git clone -b melodic https://github.com/DroidAITech/ROS-Academy-for-Beginners.git	#下载教学包
 ```
 
 **4  安装依赖**
