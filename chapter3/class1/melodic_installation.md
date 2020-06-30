@@ -75,6 +75,17 @@ sudo apt install ros-melodic-slam-gmapping
 apt search ros-melodic
 ```
 
+**设置/etc/hosts**
+添加raw.githubusercontent.com中国镜像站点,或使用翻墙工具
+
+```bash
+$ vim /etc/hosts
+```
+
+```
+151.101.76.133      raw.githubusercontent.com 
+```
+
 - **rosdep初始化**
 使用ROS之前你需要使用rosdep进行初始化。rosdep用于安装ROS核心部件编译或运行时需要的系统依赖。 
 
