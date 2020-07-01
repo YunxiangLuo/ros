@@ -6,7 +6,7 @@
 **本讲重点**
 
 - VIM(学过的同学可省略)
-- Roboware Studio
+- Roboware Studio [下载](链接: https://pan.baidu.com/s/18LFiv1xLu2PMoCS1J3VGPg 提取码: ax35)
 - 代码管理器Git
 
 **教学目的**
