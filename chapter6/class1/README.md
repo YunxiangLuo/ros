@@ -340,22 +340,37 @@ Greeting.srv编译后会产生三个类，分别是
 
 ```python
 #!/usr/bin/env python
+# coding:utf-8
 
+# 上面指定编码utf-8，使python能够识别中文
+
+# 加载必需模块，注意service模块的加载方式，from 包名.srv import *
+# 其中srv指的是在包根目录下的srv文件夹，也即srv模块
 import rospy
 from service_demo.srv import *
 
 def server_srv():
-      rospy.init_node('greetings_server')
-      s = rospy.Service('greetings', Greeting, handle_function)   #定义程序的server端
-      rospy.loginfo('Ready to handle the request:')
-      rospy.spin()  
+    # 初始化节点，命名为 "greetings_server"
+    rospy.init_node("greetings_server")
+    # 定义service的server端，service名称为"greetings"， service类型为Greeting
+    # 收到的request请求信息将作为参数传递给handle_function进行处理
+    s = rospy.Service("greetings", Greeting, handle_function)
+    rospy.loginfo("Ready to handle the request:")
+    # 阻塞程序结束
+    rospy.spin()
 
+# Define the handle function to handle the request inputs
 def handle_function(req):
-       rospy.loginfo('Request from', req.name, 'with age', req.age)
-       return GreetingResponse('Hi %s. I’m server!'%req.name)
+    # 注意我们是如何调用request请求内容的，与前面client端相似，都是将其认为是一个对象的属性，通过对象调用属性，在我们定义
+    # 的Service_demo类型的service中，request部分的内容包含两个变量，一个是字符串类型的name，另外一个是整数类型的age
+    rospy.loginfo( 'Request from %s with age %d', req.name, req.age)
+    # 返回一个Service_demoResponse实例化对象，其实就是返回一个response的对象，其包含的内容为我们再Service_demo.srv中定义的
+    # response部分的内容，我们定义了一个string类型的变量，因此，此处实例化时传入字符串即可
+    return GreetingResponse("Hi %s. I' server!"%req.name)
 
-if __name__=='__main__':
-       server_srv()
+# 如果单独运行此文件，则将上面定义的server_srv作为主函数运行
+if __name__=="__main__":
+    server_srv()
 ```
 
 在ROSPY的处理函数里，传入的只是request，返回值是response，直接返回GreetingResponse类型的变量。
@@ -366,22 +381,35 @@ if __name__=='__main__':
 
 ```python
 #!/usr/bin/env python
+# coding:utf-8
 
+# 上面的第二句指定编码类型为utf-8，是为了使python能够识别中文
+
+# 加载所需模块
 import rospy
 from service_demo.srv import *
 
 def client_srv():
-      rospy.init_node('greetings_client')
-      rospy.wait_for_service('greetings')
-      try:
-          greetings_client = rospy.ServiceProxy('greetings', Greeting)
-          rosp = greetings_client('HAN', 20)
-          rospy.loginfo('Message From Server: %s'%rosp.feedback)
-      except rospy.ServiceExceptioin, e:
-          rospy.logwarn('Service call failed:%s'%e)
+    rospy.init_node('greetings_client')
+    # 等待有可用的服务 "greetings"
+    rospy.wait_for_service("greetings")
+    try:
+        # 定义service客户端，service名称为“greetings”，service类型为Greeting
+        greetings_client = rospy.ServiceProxy("greetings",Greeting)
 
-if __name__=='__main__':
-       client_srv()
+        # 向server端发送请求，发送的request内容为name和age,其值分别为"HAN", 20
+        # 注意，此处发送的request内容与service文件中定义的request部分的属性是一致的
+        #resp = greetings_client("HAN",20)
+        resp = greetings_client.call("HAN",20)
+
+        # 打印处理结果，注意调用response的方法，类似于从resp对象中调取response属性
+        rospy.loginfo("Message From server:%s"%resp.feedback)
+    except rospy.ServiceException, e:
+        rospy.logwarn("Service call failed: %s"%e)
+
+# 如果单独运行此文件，则将上面函数client_srv()作为主函数运行
+if __name__=="__main__":
+    client_srv()
 ```
 
 Greetings_client用greetings_client.call()来调用服务。
