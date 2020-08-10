@@ -42,10 +42,10 @@ rosrun xbot_tools keyboard_control.py
 那么接下来我们还是简单地演示一下定位的方法
 
 ```
-<pre>roslaunch robot_sim_demo robot_spawn.launch
+roslaunch robot_sim_demo robot_spawn.launch
 roslaunch navigation_sim_demo amcl_demo.launch
 roslaunch navigation_sim_demo view_navigation.launch
-rosrun robot_sim_demo robot_keyboard_teleop.launch</pre>
+rosrun robot_sim_demo robot_keyboard_teleop.launch
 ```
 
 执行程序进行仿真演示，运行以上命令。
