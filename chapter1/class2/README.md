@@ -58,11 +58,39 @@
 
  **安装步骤**
 
-1. 插入U盘，开机后一般按F2或者F12进入BIOS界面，将启动顺序设置成优先从U盘启动，按F10保存Bios设置并退出，开始装载系统，根据提示进行安装。
+1. 插入U盘，开机后一般按F2或者F12进入BIOS界面，将启动顺序设置成优先从U盘启动，关闭secureboot，启动从UEFI only改为legacy only,按F10保存Bios设置并退出，开始装载系统，根据提示进行安装。
 
 ![figure_2_4](src/images/figure_2_4.png)
 
 2. 启动顺序在BIOS中一般表示成BOOT、Boot sequence等，注意BIOS里面的解释。不同的PC进入BIOS的方式可能有差异，可以通过搜索引擎查找进入BIOS界面的方式。
+
+当启动不成功时，通常是由于
+
+a）显卡不支持
+
+留意“GNU GRUB”引导加载程序屏幕。当您看到显示的“Ubuntu”选项时，按键盘上的“E”键。“Ubuntu”的选项在编辑器中，使用箭头键定位到以“linux /boot/vmlinuz***”开头的行的末尾（每个引导加载程序显示的内容可能稍有不同）。在行尾键入“nomodeset”行选项。之后，按F10或“CTRL+X”键，您的系统应能引导至正常安装程序或正常的实时环境。
+
+解决方案 – 第二部分（永久性“nomodeset”选项）
+
+    打开终端程序并键入“sudo gedit /etc/default/grub”
+    如果出现提示，请输入您的密码。
+    将光标移动到如下所示的行上（图 4）：
+    GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
+
+    GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
+    图4
+    更改该行，以匹配以下内容（图 5）：
+    （您还可以删除 quiet 和/或 splash 变量，对无法引导问题进行故障排除）
+    GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash nomodeset”
+
+    GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash nomodeset”
+    图5
+    单击“Save”（保存）。
+    关闭窗口。
+    在终端程序中，键入“sudo update-grub2”并按 Enter 键。
+    在完成以上更改后，您应能够重新启动计算机。
+
+  
 
 3. 选择安装分区的时候，创建/为ext4格式，至少为40G以上，再创建一个swap分区，一般为内存的2倍。
 
