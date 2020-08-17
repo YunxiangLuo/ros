@@ -231,6 +231,7 @@ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt update              #更新软件源
 sudo apt install gazebo9     #更新Gazebo9
 sudo apt upgrade
+sudo apt upgrade libignition-math2
 ```
 
 打开Gazebo
