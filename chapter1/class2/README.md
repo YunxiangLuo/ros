@@ -10,6 +10,8 @@
 
 要求学生使用物理机安装Ubuntu，本课程Gazebo仿真硬件要求为物理机、I7 CPU、8G以上内存。虚拟机不能满足课程仿真环境的速度要求。
 
+注：安装操作系统有困难的同学，可以直接使用我们为您制作的USB live盘（下载ISO文件，rufus进行刷写）。链接:https://pan.baidu.com/s/11-Yc1rrHkb0FHl1CDzwXXA 提取码:s5o9 
+
 ## 1. 步骤概述
 
 1. 在Windows系统下安装Win-Ubuntu双系统
