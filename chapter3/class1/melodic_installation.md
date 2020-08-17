@@ -224,12 +224,10 @@ rosdep install --from-paths src --ignore-src --rosdistro=melodic -y  #安装依�
 如果版本过低
 
 ```bash
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-#添加安装公钥
-
-sudo apt update              #更新软件源
-sudo apt install gazebo9     #更新Gazebo9
+$ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+$ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install gazebo9
 sudo apt upgrade
 sudo apt upgrade libignition-math2
 ```
