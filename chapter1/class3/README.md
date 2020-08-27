@@ -6,6 +6,8 @@
 2.	Vim的使用
 3.	Vim的配置
 
+C语言基础书籍下载 https://pan.baidu.com/s/1oeXwT3-LDqHcyUMOM19ipg   提取码：1sv3
+
 ## 1. Vim的安装
 
 vi编辑器是Linux和Unix上最基本的文本编辑器，工作在字符模式下。由于不需要图形界面，使它成了效率很高的文本编辑器。尽管在Linux上也有很多图形界面的编辑器可用，但vi在系统和服务器管理中的功能是那些图形编辑器所无法比拟的。vim是vi的加强版本，安装方法是`sudo apt-get install vim`。
