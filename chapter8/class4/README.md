@@ -27,7 +27,7 @@
 
 ```bash
 roslaunch robot_sim_demo robot_spawn.launch
-rosrun slam_sim_demo gmapping.demo.launch
+roslaunch slam_sim_demo gmapping.demo.launch
 roslaunch slam_sim_demo view_slam.launch
 rosrun robot_sim_demo robot_keyboard_teleop.py
 ```
