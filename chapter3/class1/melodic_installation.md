@@ -28,6 +28,8 @@ Rufus是一个Linux USB安装盘制作工具，可用于格式化和创建可启
 sudo wget https://mirror.iscas.ac.cn/mirror/xlab_ubuntu18.04.list -O /etc/apt/sources.list.d/xlab_ubuntu18.04.list
 ```
 
+如isrc源有问题，可使用国内的阿里、清华、163等其他源
+
 或者单独下载软件源文件 [xlab_ubuntu18.04.list](https://mirror.iscas.ac.cn/mirror/xlab_ubuntu18.04.list)
 
 2、Ubuntu添加 ROS 源命令
@@ -81,6 +83,12 @@ apt search ros-melodic
 ```bash
 $ vim /etc/hosts
 ```
+
+```
+199.232.96.133      raw.githubusercontent.com 
+```
+
+或
 
 ```
 151.101.76.133      raw.githubusercontent.com 
